@@ -9,10 +9,10 @@ import org.sid.ebankingbackend.enums.AccountStatus;
 import java.util.Date;
 import java.util.List;
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYPE", length = 4, discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorColumn(name = "TYPE", length = 4, discriminatorType = DiscriminatorType.STRING)
 @Data @AllArgsConstructor @NoArgsConstructor
-public class BankAccount {
+public abstract class BankAccount {
     @Id
     private String id;
     private double balance;
